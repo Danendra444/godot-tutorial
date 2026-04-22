@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dw5hhbw80lj1s"]
 
 [ext_resource type="Script" uid="uid://ccuf4rb6bm7r2" path="res://level_controller.gd" id="1_1oj5k"]
-[ext_resource type="PackedScene" uid="uid://e5miqs50178r" path="res://Level 1.tscn" id="2_yx7mw"]
+[ext_resource type="PackedScene" uid="uid://e5miqs50178r" path="res://Levels/Level 1.tscn" id="2_yx7mw"]
 
 [node name="MainGame" type="Node" unique_id=592007289]
 
