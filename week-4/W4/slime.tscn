@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://fckn5wm4adt7"]
+
+[ext_resource type="Texture2D" uid="uid://b50ycf1y3t5dm" path="res://assets/slime_normal_rest.png" id="1_2d52u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5jc4t"]
+radius = 17.029387
+
+[node name="Slime" type="RigidBody2D" unique_id=739567927]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=332500973]
+texture = ExtResource("1_2d52u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1971336490]
+position = Vector2(1, 11)
+shape = SubResource("CircleShape2D_5jc4t")

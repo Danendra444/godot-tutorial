@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://by2655gyxq7ag"]
+
+[ext_resource type="Texture2D" uid="uid://ct0mlahwakm7d" path="res://assets/spritesheet-characters-default.png" id="1_oul6g"]
+[ext_resource type="Script" uid="uid://413yiixj1eov" path="res://player/player.gd" id="1_rkbax"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkbax"]
+atlas = ExtResource("1_oul6g")
+region = Rect2(645, 129, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yw30f"]
+atlas = ExtResource("1_oul6g")
+region = Rect2(774, 129, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjkh3"]
+atlas = ExtResource("1_oul6g")
+region = Rect2(129, 258, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oul6g"]
+atlas = ExtResource("1_oul6g")
+region = Rect2(387, 258, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1dw6"]
+atlas = ExtResource("1_oul6g")
+region = Rect2(0, 258, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g1dw6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkbax")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yw30f")
+}],
+"loop": true,
+"name": &"jump_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjkh3")
+}],
+"loop": true,
+"name": &"jump_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oul6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1dw6")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yw30f"]
+radius = 22.0
+height = 56.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1059422366]
+script = ExtResource("1_rkbax")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1929769442]
+sprite_frames = SubResource("SpriteFrames_g1dw6")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=970963987]
+position = Vector2(0, 33)
+shape = SubResource("CapsuleShape2D_yw30f")
