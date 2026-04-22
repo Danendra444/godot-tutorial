@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://fckn5wm4adt7"]
 
 [ext_resource type="Texture2D" uid="uid://b50ycf1y3t5dm" path="res://assets/slime_normal_rest.png" id="1_2d52u"]
+[ext_resource type="Script" uid="uid://djgypu45r1lsg" path="res://slime.gd" id="1_5jc4t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5jc4t"]
 radius = 17.029387
 
-[node name="Slime" type="RigidBody2D" unique_id=739567927]
+[node name="Slime" type="CharacterBody2D" unique_id=485216807]
+collision_layer = 4
+collision_mask = 7
+floor_stop_on_slope = false
+script = ExtResource("1_5jc4t")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=332500973]
 texture = ExtResource("1_2d52u")
@@ -13,3 +18,8 @@ texture = ExtResource("1_2d52u")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1971336490]
 position = Vector2(1, 11)
 shape = SubResource("CircleShape2D_5jc4t")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1704295093]
+position = Vector2(1, 11)
+target_position = Vector2(-38, 0)
+collision_mask = 2
