@@ -17,15 +17,6 @@ Di akhir tutorial ini, diharapkan kamu paham dengan penggunaan _TileMap_ dan _Si
     - [Paint the TileMap](#Paint-the-TileMap)
   - [Making the Camera Follows The Player](#Making-the-Camera-Follows-The-Player)
     - [How Simple It Is](#How-Simple-It-Is)
-  - [Adding Area Trigger for Lose and Win Condition](#Adding-Area-Trigger-for-Lose-and-Win-Condition)
-    - [Set Up](#set-up)
-    - [What is Signals?](#What-is-Signals)
-    - [Using Signals](#Using-Signals)
-    - [Adding It to the Level](#Adding-It-to-the-Level)
-  - [Bonus To Do](#bonus-to-do)
-  - [Instruksi Pengerjaan](#Instruksi-Pengerjaan)
-  - [Skema Penilaian](#skema-penilaian)
-  - [Pengumpulan](#pengumpulan)
   - [Referensi](#referensi)
 
 ## Pengantar
@@ -114,7 +105,7 @@ Lalu pada tab tileset di bagian bawah pilih tab select. Kemudian pilih salah sat
 pada scene kalian. Klik bagian physics dari tile tersebut. Kemudian pada ikon titik tiga pilih reset to default tile shape.
 Lakukan hal tersebut ke semua tile yang akan digunakan.
 
-[](images/tileset_add_physics.mp4)
+https://github.com/user-attachments/assets/5087848b-2312-4c2c-aab6-4aa7203753e7
 
 ## Making the Camera Follows The Player
 
