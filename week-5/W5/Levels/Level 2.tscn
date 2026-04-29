@@ -1,0 +1,31 @@
+[gd_scene format=4 uid="uid://dj3q8s8w6o1tt"]
+
+[ext_resource type="Script" uid="uid://cw5es4ffici40" path="res://level.gd" id="1_aky0p"]
+[ext_resource type="PackedScene" uid="uid://cqhjnak70h3px" path="res://Levels/Level 3.tscn" id="2_f7mle"]
+[ext_resource type="TileSet" uid="uid://1ga2qvu5a7ay" path="res://backdrop.tres" id="2_wyhqr"]
+[ext_resource type="PackedScene" uid="uid://by2655gyxq7ag" path="res://player/player.tscn" id="3_cl68u"]
+[ext_resource type="TileSet" uid="uid://d4d1dh2v45as3" path="res://terrain_tile.tres" id="4_wyhqr"]
+[ext_resource type="PackedScene" uid="uid://hu30207loqc8" path="res://goal.tscn" id="6_f7mle"]
+
+[node name="Level 2" type="Node" unique_id=1565674302]
+script = ExtResource("1_aky0p")
+next_level = ExtResource("2_f7mle")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1134918538]
+scroll_scale = Vector2(0.1, 0.1)
+
+[node name="Backdrop" type="TileMapLayer" parent="Parallax2D" unique_id=400730506]
+tile_map_data = PackedByteArray("AAAAAAEAAAABAAEAAAABAAEAAAACAAEAAAACAAEAAAADAAEAAAADAAEAAAAAAAIAAAAEAAEAAAABAAEAAAAAAAIAAAABAAMAAAABAAIAAAABAAMAAAACAAIAAAABAAMAAAADAAIAAAABAAMAAAAEAAIAAAABAAMAAAAAAAAAAAABAAIAAAABAAAAAAABAAIAAAACAAAAAAABAAIAAAADAAAAAAABAAIAAAAEAAAAAAABAAIAAAA=")
+tile_set = ExtResource("2_wyhqr")
+
+[node name="Player" parent="." unique_id=314403977 instance=ExtResource("3_cl68u")]
+position = Vector2(173, 385)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1527810390]
+tile_map_data = PackedByteArray("AAACAAcAAgABAAoAAAADAAcAAgACAAoAAAAEAAcAAgACAAoAAAAFAAcAAgACAAoAAAAGAAcAAgACAAoAAAAHAAcAAgACAAoAAAAMAAcAAgACAAoAAAANAAcAAgACAAoAAAAQAAcAAgAFAAoAAAAOAAcAAgACAAoAAAAPAAcAAgACAAoAAAAIAAcAAgAFAAoAAAALAAcAAgABAAoAAAA=")
+tile_set = ExtResource("4_wyhqr")
+
+[node name="Goal" parent="." unique_id=2119175573 instance=ExtResource("6_f7mle")]
+position = Vector2(1041, 419)
+
+[connection signal="player_entered" from="Goal" to="." method="_on_goal_player_entered"]

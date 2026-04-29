@@ -1,0 +1,63 @@
+[gd_scene format=4 uid="uid://e5miqs50178r"]
+
+[ext_resource type="Script" uid="uid://cw5es4ffici40" path="res://level.gd" id="1_d1jbf"]
+[ext_resource type="Texture2D" uid="uid://b5xg4nioptru8" path="res://assets/spritesheet-backgrounds-default.png" id="1_gvvdy"]
+[ext_resource type="PackedScene" uid="uid://by2655gyxq7ag" path="res://player/player.tscn" id="1_va7m3"]
+[ext_resource type="PackedScene" uid="uid://dj3q8s8w6o1tt" path="res://Levels/Level 2.tscn" id="2_ui7qv"]
+[ext_resource type="TileSet" uid="uid://d4d1dh2v45as3" path="res://terrain_tile.tres" id="5_pjihm"]
+[ext_resource type="PackedScene" uid="uid://hu30207loqc8" path="res://goal.tscn" id="6_pjihm"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hi2wx"]
+texture = ExtResource("1_gvvdy")
+separation = Vector2i(1, 1)
+texture_region_size = Vector2i(256, 256)
+0:2/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+1:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+3:1/0 = 0
+2:1/0 = 0
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_1xjbt"]
+tile_size = Vector2i(256, 256)
+sources/0 = SubResource("TileSetAtlasSource_hi2wx")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pjihm"]
+distance = -652.0
+
+[node name="Level 1" type="Node" unique_id=1565674302]
+script = ExtResource("1_d1jbf")
+next_level = ExtResource("2_ui7qv")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1134918538]
+scroll_scale = Vector2(0.1, 0.1)
+
+[node name="Backdrop" type="TileMapLayer" parent="Parallax2D" unique_id=400730506]
+tile_map_data = PackedByteArray("AAAAAAEAAAABAAEAAAABAAEAAAACAAEAAAACAAEAAAADAAEAAAADAAEAAAAAAAIAAAAEAAEAAAABAAEAAAAAAAIAAAABAAMAAAABAAIAAAABAAMAAAACAAIAAAABAAMAAAADAAIAAAABAAMAAAAEAAIAAAABAAMAAAAAAAAAAAABAAIAAAABAAAAAAABAAIAAAACAAAAAAABAAIAAAADAAAAAAABAAIAAAAEAAAAAAABAAIAAAA=")
+tile_set = SubResource("TileSet_1xjbt")
+
+[node name="Player" parent="." unique_id=314403977 instance=ExtResource("1_va7m3")]
+position = Vector2(173, 385)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1527810390]
+tile_map_data = PackedByteArray("AAACAAcAAgABAAoAAAADAAcAAgACAAoAAAAEAAcAAgACAAoAAAAFAAcAAgACAAoAAAAGAAcAAgACAAoAAAAHAAcAAgACAAoAAAAIAAcAAgACAAoAAAAJAAcAAgACAAoAAAAKAAcAAgACAAoAAAALAAcAAgACAAoAAAAMAAcAAgACAAoAAAANAAcAAgACAAoAAAAQAAcAAgAFAAoAAAAOAAcAAgACAAoAAAAPAAcAAgACAAoAAAA=")
+tile_set = ExtResource("5_pjihm")
+
+[node name="Goal" parent="." unique_id=2119175573 instance=ExtResource("6_pjihm")]
+position = Vector2(1042, 417)
+
+[node name="Boundary" type="Area2D" parent="." unique_id=1717231652]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary" unique_id=988802874]
+shape = SubResource("WorldBoundaryShape2D_pjihm")
+
+[connection signal="player_entered" from="Goal" to="." method="_on_goal_player_entered"]
+[connection signal="body_entered" from="Boundary" to="." method="_on_boundary_body_entered"]

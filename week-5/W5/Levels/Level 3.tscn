@@ -1,0 +1,35 @@
+[gd_scene format=4 uid="uid://cqhjnak70h3px"]
+
+[ext_resource type="Script" uid="uid://cw5es4ffici40" path="res://level.gd" id="1_jnn57"]
+[ext_resource type="PackedScene" uid="uid://difyw2urrxxi0" path="res://Levels/LevelDone.tscn" id="2_0gc1s"]
+[ext_resource type="TileSet" uid="uid://1ga2qvu5a7ay" path="res://backdrop.tres" id="3_3lq5p"]
+[ext_resource type="PackedScene" uid="uid://by2655gyxq7ag" path="res://player/player.tscn" id="4_0dn15"]
+[ext_resource type="TileSet" uid="uid://d4d1dh2v45as3" path="res://terrain_tile.tres" id="5_17jni"]
+[ext_resource type="PackedScene" uid="uid://hu30207loqc8" path="res://goal.tscn" id="6_f7000"]
+[ext_resource type="PackedScene" uid="uid://fckn5wm4adt7" path="res://slime.tscn" id="7_0gc1s"]
+
+[node name="Level 2" type="Node" unique_id=1565674302]
+script = ExtResource("1_jnn57")
+next_level = ExtResource("2_0gc1s")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1134918538]
+scroll_scale = Vector2(0.1, 0.1)
+
+[node name="Backdrop" type="TileMapLayer" parent="Parallax2D" unique_id=400730506]
+tile_map_data = PackedByteArray("AAAAAAEAAAABAAEAAAABAAEAAAACAAEAAAACAAEAAAADAAEAAAADAAEAAAAAAAIAAAAEAAEAAAABAAEAAAAAAAIAAAABAAMAAAABAAIAAAABAAMAAAACAAIAAAABAAMAAAADAAIAAAABAAMAAAAEAAIAAAABAAMAAAAAAAAAAAABAAIAAAABAAAAAAABAAIAAAACAAAAAAABAAIAAAADAAAAAAABAAIAAAAEAAAAAAABAAIAAAA=")
+tile_set = ExtResource("3_3lq5p")
+
+[node name="Player" parent="." unique_id=314403977 instance=ExtResource("4_0dn15")]
+position = Vector2(173, 385)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1527810390]
+tile_map_data = PackedByteArray("AAACAAcAAgABAAoAAAADAAcAAgACAAoAAAAEAAcAAgACAAoAAAAFAAcAAgACAAoAAAAGAAcAAgACAAoAAAAHAAcAAgACAAoAAAAMAAcAAgACAAoAAAANAAcAAgACAAoAAAAQAAcAAgAFAAoAAAAOAAcAAgACAAoAAAAPAAcAAgACAAoAAAALAAcAAgACAAoAAAAIAAcAAgACAAoAAAAJAAcAAgACAAoAAAAKAAcAAgACAAoAAAANAAYAAgANAAoAAAAGAAYAAgANAAoAAAA=")
+tile_set = ExtResource("5_17jni")
+
+[node name="Goal" parent="." unique_id=2119175573 instance=ExtResource("6_f7000")]
+position = Vector2(1041, 419)
+
+[node name="Slime" parent="." unique_id=739567927 instance=ExtResource("7_0gc1s")]
+position = Vector2(694, 414)
+
+[connection signal="player_entered" from="Goal" to="." method="_on_goal_player_entered"]

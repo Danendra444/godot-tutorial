@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dw5hhbw80lj1s"]
+
+[ext_resource type="Script" uid="uid://ccuf4rb6bm7r2" path="res://level_controller.gd" id="1_1oj5k"]
+[ext_resource type="PackedScene" uid="uid://e5miqs50178r" path="res://Levels/Level 1.tscn" id="2_yx7mw"]
+
+[node name="MainGame" type="Node" unique_id=592007289]
+
+[node name="LevelController" type="Node" parent="." unique_id=1814973955]
+script = ExtResource("1_1oj5k")
+current_level = ExtResource("2_yx7mw")
+
+[node name="CurrentLevel" parent="LevelController" unique_id=1565674302 instance=ExtResource("2_yx7mw")]

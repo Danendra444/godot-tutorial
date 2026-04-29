@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://hu30207loqc8"]
+
+[ext_resource type="Script" uid="uid://dgcybrwkh0l0i" path="res://goal.gd" id="1_0qle8"]
+[ext_resource type="Texture2D" uid="uid://mshm8gyuni" path="res://assets/spritesheet-tiles-default.png" id="2_p20yd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qle8"]
+size = Vector2(70, 68)
+
+[node name="Goal" type="Node2D" unique_id=2119175573]
+script = ExtResource("1_0qle8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1372894008]
+texture = ExtResource("2_p20yd")
+region_enabled = true
+region_rect = Rect2(1105, 130, 64, 64)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=368808886]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1563388727]
+position = Vector2(-3, 2)
+shape = SubResource("RectangleShape2D_0qle8")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
