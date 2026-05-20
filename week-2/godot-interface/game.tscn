@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b5xg4nioptru8" path="res://assets/spritesheet-backgrounds-default.png" id="1_80nbo"]
 [ext_resource type="Texture2D" uid="uid://mshm8gyuni" path="res://assets/spritesheet-tiles-default.png" id="2_feb5d"]
 [ext_resource type="PackedScene" uid="uid://fckn5wm4adt7" path="res://slime.tscn" id="4_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://d4p1yr12345x" path="res://player.tscn" id="5_player"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2o6t"]
 texture = ExtResource("1_80nbo")
@@ -400,3 +401,6 @@ shape = SubResource("WorldBoundaryShape2D_fc0e3")
 
 [node name="Slime" parent="." unique_id=739567927 instance=ExtResource("4_fc0e3")]
 position = Vector2(721, 342)
+
+[node name="Player" parent="." instance=ExtResource("5_player")]
+position = Vector2(500, 300)
