@@ -402,5 +402,5 @@ shape = SubResource("WorldBoundaryShape2D_fc0e3")
 [node name="Slime" parent="." unique_id=739567927 instance=ExtResource("4_fc0e3")]
 position = Vector2(721, 342)
 
-[node name="Player" parent="." instance=ExtResource("5_player")]
-position = Vector2(500, 300)
+[node name="Player" parent="." unique_id=990669267 instance=ExtResource("5_player")]
+position = Vector2(510, 317)
